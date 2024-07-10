@@ -1,0 +1,13 @@
+Ad-hoc commands
+ansible all -m ping
+ansible all -m setup
+ansible all -m apt -a "name=nginx state=present" -b
+ansible all -m service -a "name=nginx state=started" -b
+ansible all -m copy -a "src=/path/to/local/file dest=/path/to/remote/file" -b
+ansible all -m command -a "uptime"
+ansible all -m reboot -b
+ansible all -m user -a "name=johndoe state=present" -b
+ansible all -m file -a "path=/path/to/file mode=0644" -b
+ansible all -m fetch -a "src=/path/to/remote/file dest=/path/to/local/directory" -b
+ansible all -i /path/to/inventory -m ping
+ansible webservers -m service -a "name=nginx state=started" -b
